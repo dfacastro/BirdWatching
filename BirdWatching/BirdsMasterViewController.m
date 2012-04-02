@@ -143,7 +143,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
+        NSDate *object = [_objects	 objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
