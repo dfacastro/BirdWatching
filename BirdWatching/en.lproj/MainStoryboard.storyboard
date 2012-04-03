@@ -103,6 +103,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="mMV-cy-alB" id="tLJ-GR-Ap1"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -127,6 +130,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="mMV-cy-alB" id="HKu-lC-HpJ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -141,9 +147,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="I8W-C7-fy8">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ctO-1V-YPE"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="thu-kB-VFG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ctO-1V-YPE">
+                            <connections>
+                                <action selector="cancel:" destination="mMV-cy-alB" id="4hU-Ly-j1t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="thu-kB-VFG">
+                            <connections>
+                                <action selector="done:" destination="mMV-cy-alB" id="gJ3-AN-boZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birdNameInput" destination="aEZ-xX-WbQ" id="E2P-Hl-iMe"/>
+                        <outlet property="locationInput" destination="Z3X-MK-OlR" id="j7G-XS-QjT"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1925" y="64"/>
@@ -275,6 +293,12 @@
     <classes>
         <class className="AddSightingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSightingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="birdNameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="locationInput" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="BirdsDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdsDetailViewController.h"/>
