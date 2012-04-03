@@ -67,7 +67,13 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bird Sightings" id="36"/>
+                    <navigationItem key="navigationItem" title="Bird Sightings" id="36">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lzC-Bj-JEe">
+                            <connections>
+                                <segue destination="hgE-sN-lE6" kind="modal" identifier="ShowAddSightingView" id="teA-rv-YWt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
@@ -164,7 +170,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1925" y="64"/>
+            <point key="canvasLocation" x="1125" y="-588"/>
         </scene>
         <!--Birds Detail View Controller-->
         <scene sceneID="2NT-gn-W90">
@@ -287,31 +293,9 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1399" y="64"/>
+            <point key="canvasLocation" x="599" y="-588"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddSightingViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSightingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="birdNameInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="locationInput" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="BirdsDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdsDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="birdNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BirdsMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdsMasterViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
