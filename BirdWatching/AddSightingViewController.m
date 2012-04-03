@@ -27,6 +27,8 @@
 @synthesize birdNameInput = _birdNameInput;
 @synthesize locationInput = _locationInput;
 
+@synthesize delegate = _delegate;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -136,9 +138,11 @@
 }
 
 - (IBAction)cancel:(id)sender {
+    [[self delegate] addSightingViewControllerDidCancel:self];
 }
 
 - (IBAction)done:(id)sender {
+    [[ self delegate] addSightingViewControllerDidFinish:self name:self.birdNameInput.text location:self.locationInput.text];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
